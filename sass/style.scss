@@ -1,0 +1,238 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to right, #cce6be, #2f7009);
+    font-family: sans-serif;
+    font-size: 14px;
+    background-color: #2f7009;
+}
+.container {
+    width: calc(100% - 10em);
+    margin: 0 auto;  
+}
+
+.container-fluid {
+    width: 100%;
+    margin: 0 auto;
+    background: rgba(202, 243, 186, 0.616);  
+}
+  
+div[class^="col-"] {
+    border: 1px solid rgb(0, 0, 0);
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+$columns: 12;
+
+@for $i from 1 through $columns {
+    .col-#{$i}{
+      flex: 0 0 100% / $columns * $i;
+  }
+    .col-offset-#{$i} { 
+      margin-left: 100% / $columns * $i;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .container {
+        width: 100%;
+    }
+    @for $i from 1 through $columns {
+        .col-xs-#{$i}{
+          flex: 0 0 100% / $columns * $i;
+      }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    @for $i from 1 through $columns {
+        .col-sm-#{$i}{
+          flex: 0 0 100% / $columns * $i;
+      }
+    }
+}
+
+@media screen and (min-width: 992px) {
+    @for $i from 1 through $columns {
+        .col-md-#{$i}{
+          flex: 0 0 100% / $columns * $i;
+      }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    @for $i from 1 through $columns {
+        .col-lg-#{$i}{
+          flex: 0 0 100% / $columns * $i;
+      }
+    }
+}
+
+@mixin button-bg ($bg) {
+    background: $bg;
+    &:hover {
+        background: darken($bg, 5%);
+        transition: all 0.2s ease;
+    }
+    &:active {
+        background: darken($bg, 10%);
+    }
+}
+
+.btn {
+    color: black;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-family: sans-serif;
+    font-size: 1.5em;
+}
+
+.btn-green {
+    @include button-bg(green);
+}
+
+.btn-yellow {
+    @include button-bg(yellow);
+}
+
+.btn-red {
+    @include button-bg(red);
+}
+
+.btn-purple {
+    @include button-bg(purple);
+}
+
+.btn-small {
+    @include button-bg(gray);
+    font-size: 0.5em;
+}
+
+.btn-middle {
+    @include button-bg(black);
+    color: white;
+}
+
+.btn-large {
+    @include button-bg(rgb(71, 71, 247));
+    font-size: 3em;
+}
+
+:disabled {
+    background-color: #aaa;
+    color: grey;
+    border: 1px solid grey;
+}
+
+button[type="submit"]:disabled:hover {
+    cursor: not-allowed;
+}
+
+.img-responsive {
+    width: 50%;
+    height: auto;
+}
+
+.img-rounded {
+    border-radius: 8px;
+}
+
+.img-circle {
+    border-radius: 50%;
+}
+
+.img-thumbnail{
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.img-blur {
+    filter: blur(10px);
+}
+
+.text-muted {
+    color: rgb(128, 111, 111);
+}
+
+.text-black {
+    color: black;
+}
+
+.text-green {
+    color: green;
+}
+
+.text-yellow {
+    color: yellow;
+}
+
+.text-red {
+    color: red;
+}
+
+.text-purple {
+    color: purple;
+}
+
+.bg-black {
+    background-color: black;
+    color: white;
+}
+
+.bg-red {
+    background-color: red;
+}
+
+.bg-yellow {
+    background-color: yellow;
+}
+
+.bg-purple {
+    background-color: purple;
+}
+
+.bg-blue {
+    background-color: blue;
+}
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+}
+
+.alert-success {
+    background-color: #43792352;
+}
+.alert-info {
+    background-color: rgba(0, 0, 255, 0.521);
+}
+.alert-warning {
+    background-color: rgba(255, 255, 0, 0.548);
+}
+
+.alert-danger {
+    background-color: rgba(231, 43, 43, 0.637);
+}
+
+.close {
+    float: right;
+    margin-top: -8px;
+    opacity: 0.3;
+}
+
+.close2 {
+    float: right;
+    margin-top: -8px;
+    opacity: 0.3;
+}
